@@ -1,2 +1,1 @@
-require_relative 'operation/attempt_adapter'
-require_relative 'operation'
+require_relative 'operation/base'

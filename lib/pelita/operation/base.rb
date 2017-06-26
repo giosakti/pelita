@@ -1,3 +1,5 @@
+require_relative 'attempt_adapter'
+
 module Pelita
   class Operation
     include Dry::Transaction
