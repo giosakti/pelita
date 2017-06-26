@@ -8,3 +8,4 @@ require 'rom'
 require 'rom-repository'
 
 require_relative 'core_ext'
+require_relative 'pelita/pelita'
