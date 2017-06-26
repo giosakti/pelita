@@ -6,3 +6,5 @@ require 'dry-validation'
 require 'roda'
 require 'rom'
 require 'rom-repository'
+
+require_relative 'core_ext'
