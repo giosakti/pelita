@@ -1,0 +1,8 @@
+require 'bcrypt'
+require 'dry-configurable'
+require 'dry-struct'
+require 'dry-transaction'
+require 'dry-validation'
+require 'roda'
+require 'rom'
+require 'rom-repository'
