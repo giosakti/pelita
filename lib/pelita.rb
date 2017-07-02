@@ -7,7 +7,6 @@ require 'rack-protection'
 require 'roda'
 require 'rom'
 require 'rom-repository'
-require 'rom/sql/rake_task'
 
 require_relative 'core_ext/core_ext'
 require_relative 'pelita/pelita'
