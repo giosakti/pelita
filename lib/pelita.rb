@@ -8,5 +8,5 @@ require 'roda'
 require 'rom'
 require 'rom-repository'
 
-require_relative 'core_ext'
+require_relative 'core_ext/core_ext'
 require_relative 'pelita/pelita'
