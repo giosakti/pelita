@@ -11,6 +11,14 @@ module Pelita
       plugin :multi_run
       route(&:multi_run)
 
+      def self.root_path
+        File.expand_path('')
+      end
+
+      def self.env
+        ENV['PELITA_ENV'] || 'development'
+      end
+
       def self.fetch_db_config(file)
         db_config = File.read(file)
         db_config = ERB.new(db_config).result
@@ -40,10 +48,10 @@ module Pelita
       end
 
       # Load or set initial configurations
-      setting :root, File.expand_path('')
-      setting :env, ENV['PELITA_ENV'] || 'development'
+      setting :root, Base.root_path
+      setting :env, Base.env
       setting :db do
-        setting :config, Base.fetch_db_config("#{File.expand_path('')}/config/database.yml")
+        setting :config, Base.fetch_db_config("#{Base.root_path}/config/database.yml")[Base.env]
       end
     end
   end
