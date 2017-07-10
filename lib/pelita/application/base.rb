@@ -50,9 +50,6 @@ module Pelita
       # Load or set initial configurations
       setting :root, Base.root_path
       setting :env, Base.env
-      setting :db do
-        setting :config, Base.fetch_db_config("#{Base.root_path}/config/database.yml")[Base.env]
-      end
     end
   end
 end
