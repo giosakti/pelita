@@ -7,13 +7,17 @@ module Pelita
     class Base < Roda
       extend Dry::Configurable
 
-      # Load or set initial configurations
-      setting :root, File.expand_path('')
-      setting :env, ENV['PELITA_ENV'] || 'development'
-
       # Setup routing tree
       plugin :multi_run
       route(&:multi_run)
+
+      def self.fetch_db_config(file)
+        db_config = File.read(file)
+        db_config = ERB.new(db_config).result
+        db_config = YAML.safe_load(db_config)
+
+        db_config
+      end
 
       def self.generate_connection_string(db_config)
         conn_string = db_config['adapter']
@@ -35,14 +39,11 @@ module Pelita
         conn_string
       end
 
-      def self.db_config
-        # Load db configuration
-        db_config = File.read("#{config.root}/config/database.yml")
-        db_config = ERB.new(db_config).result
-        db_config = YAML.safe_load(db_config)
-
-        # Setup connection string
-        db_config[config.env]
+      # Load or set initial configurations
+      setting :root, File.expand_path('')
+      setting :env, ENV['PELITA_ENV'] || 'development'
+      setting :db do
+        setting :config, Base.fetch_db_config("#{File.expand_path('')}/config/database.yml")
       end
     end
   end
