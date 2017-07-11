@@ -9,6 +9,12 @@ namespace :db do
     fetch_db_config("#{pelita.config.root}/config/database.yml")[pelita.config.env]
   conn_string = pelita.generate_connection_string(db_config)
 
+  task :setup do
+    ::Pelita::Persistence.container(:sql, conn_string) do |conf|
+      # NOP
+    end
+  end
+
   # TODO: @giosakti make this database agnostic
   desc 'Create database'
   task :create do
