@@ -5,6 +5,7 @@ require_relative 'application'
 require_relative 'entity'
 require_relative 'repository'
 require_relative 'operation'
+require_relative 'presenter'
 
 # Persistences
 require_relative 'persistence'
