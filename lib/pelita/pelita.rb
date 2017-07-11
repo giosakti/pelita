@@ -13,3 +13,4 @@ require_relative 'sql'
 # Functionalities
 require_relative 'types'
 require_relative 'validation'
+require_relative 'util'
