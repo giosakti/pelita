@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "dry-system", "~> 0.7"
   spec.add_dependency "dry-validation", "~> 0.10"
   spec.add_dependency "dry-transaction", "~> 0.10"
+  spec.add_dependency "graphql", "~> 1.6"
   spec.add_dependency "rack_csrf", "~> 2.6"
   spec.add_dependency "rack-protection", "~> 2.0"
   spec.add_dependency "rake", "~> 12.0"
@@ -36,6 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rom", "~> 3.2"
   spec.add_dependency "rom-repository", "~> 1.3"
   spec.add_dependency "rom-sql", "~> 1.3"
+  spec.add_dependency "warden", "~> 1.2"
 
   spec.add_development_dependency "database_cleaner", "~> 1.6"
   spec.add_development_dependency "rspec", "~> 3.6"
