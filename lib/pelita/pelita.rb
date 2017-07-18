@@ -12,6 +12,7 @@ require_relative 'persistence'
 require_relative 'sql'
 
 # Functionalities
+require_relative 'auth'
 require_relative 'types'
 require_relative 'validation'
 require_relative 'util'
