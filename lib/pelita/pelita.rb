@@ -15,3 +15,6 @@ require_relative 'sql'
 require_relative 'types'
 require_relative 'validation'
 require_relative 'util'
+
+# Ruby libraries
+require 'date'
