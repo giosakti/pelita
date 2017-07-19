@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Object
   def deep_symbolize_keys
     return self.reduce({}) do |memo, (k, v)|

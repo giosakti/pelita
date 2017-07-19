@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'container'
 
 # Building blocks
@@ -16,3 +18,6 @@ require_relative 'auth'
 require_relative 'types'
 require_relative 'validation'
 require_relative 'util'
+
+# Ruby libraries
+require 'date'
