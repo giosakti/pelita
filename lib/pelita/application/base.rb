@@ -11,6 +11,7 @@ module Pelita
 
       # Setup routing tree
       plugin :multi_run
+      plugin :indifferent_params
 
       def self.root_path
         File.expand_path('')
