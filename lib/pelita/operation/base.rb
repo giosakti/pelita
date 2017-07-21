@@ -6,7 +6,7 @@ module Pelita
       include Dry::Transaction
 
       def authorize!(options)
-        if options["current_user"].signed_in?
+        if options["current_user"].present?
           options["result.policy.default"] = true
           Right(options)
         else
