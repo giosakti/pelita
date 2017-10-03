@@ -6,11 +6,12 @@ module Pelita
       include Dry::Transaction
 
       def authorize!(options)
-        if options["current_user"].present?
-          options["result.policy.default"] = true
+        if options['current_user'].present?
+          options['result.policy.default'] = true
           Right(options)
         else
-          options["result.policy.default"] = false
+          options['result.policy.default'] = false
+          options['result.policy.errors'] = "You're not authorized."
           Left(options)
         end
       end
