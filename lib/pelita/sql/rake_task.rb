@@ -77,4 +77,10 @@ namespace :db do
 
     DB.disconnect
   end
+
+  desc 'Seed database'
+  task :seed do
+    load File.join pelita.config.root, 'db', 'seeds.rb'
+    puts 'Seeds was successfully executed'
+  end
 end
