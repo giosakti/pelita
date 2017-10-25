@@ -34,9 +34,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rack-protection", "~> 2.0"
   spec.add_dependency "rake", "~> 12.0"
   spec.add_dependency "roda", "~> 2.27"
-  spec.add_dependency "rom", "~> 4.0.0.beta"
-  spec.add_dependency "rom-sql", "~> 2.0.0.beta"
+  spec.add_dependency "rom", "~> 4.0.0"
+  spec.add_dependency "rom-sql", "~> 2.0.0"
   spec.add_dependency "warden", "~> 1.2"
+  spec.add_dependency "thor", "~> 0.19.4"
 
   spec.add_development_dependency "database_cleaner", "~> 1.6"
   spec.add_development_dependency "rspec", "~> 3.6"
