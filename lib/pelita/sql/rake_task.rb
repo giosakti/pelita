@@ -60,4 +60,27 @@ namespace :db do
 
     DB.disconnect
   end
+
+  desc 'Dump database schema into a file'
+  task :dump_schema do
+    DB = Sequel.send(
+      db_config['adapter'].to_sym,
+      'postgres',
+      user: db_config['username'],
+      password: db_config['password'],
+      host: db_config['host'],
+      port: db_config['port']
+    )
+
+    `sequel -D #{"postgres"}://#{db_config['host']}/#{db_config['database']} > #{pelita.config.root}/db/schema.rb`
+    puts "Schema migration was created in #{pelita.config.root}/db/schema.rb"
+
+    DB.disconnect
+  end
+
+  desc 'Seed database'
+  task :seed do
+    load File.join pelita.config.root, 'db', 'seeds.rb'
+    puts 'Seeds was successfully executed'
+  end
 end

@@ -11,7 +11,7 @@ module Pelita
         step.operation.call(input, *args)
       rescue *Array(step.options[:catch]) => e
         e = step.options[:raise].new(e.message) if step.options[:raise]
-        input["error"] = e
+        input['errors'] = e
         Left(input)
       end
     end
